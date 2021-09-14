@@ -4,16 +4,13 @@ pragma solidity >=0.6.0 <0.8.0;
 import "./Token.sol";
 
 contract dBank {
-
-  //assign Token contract to variable
-
+  Token private token;
   //add mappings
 
   //add events
 
-  //pass as constructor argument deployed Token contract
-  constructor() public {
-    //assign token deployed contract to variable
+  constructor(Token _token) public {
+    token = _token;
   }
 
   function deposit() payable public {
