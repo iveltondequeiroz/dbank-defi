@@ -1,2 +1,2 @@
 # dbank-defi
-dbank defi dapp - solidity, truffle, react, web3.js
+dbank defi dapp - solidity, web3.js, truffle, openzeppelin, react. 
