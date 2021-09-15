@@ -6,8 +6,6 @@ import dbank from '../dbank.png';
 import Web3 from 'web3';
 import './App.css';
 
-//h0m3w0rk - add new tab to check accrued interest
-
 class App extends Component {
 
   async componentWillMount() {
@@ -16,15 +14,20 @@ class App extends Component {
 
   async loadBlockchainData(dispatch) {
 
-    //check if MetaMask exists
-
-      //assign to values to variables: web3, netId, accounts
-
-      //check if account is detected, then load balance&setStates, elsepush alert
-
-      //in try block load contracts
-
-    //if MetaMask not exists push alert
+    if(typeof window.ethereum !== 'undefined'){
+      const web3 = new Web3(window.ethereum);
+      const netId = await web3.eth.net.getId();
+      const accounts = await web3.eth.getAccounts();
+      
+      if(typeof accounts[0]!=='undefined'){
+        const balance = await web3.eth.getBalance(accounts[0]);
+        this.setState({ account: accounts[0], balance, web3 });
+      } else {
+        Window.alert("Please login with Metamask");  
+      }
+    } else {
+      Window.alert("Please install Metamask");
+    }
   }
 
   async deposit(amount) {
@@ -56,7 +59,7 @@ class App extends Component {
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
             className="navbar-brand col-sm-3 col-md-2 mr-0"
-            href="http://www.dappuniversity.com/bootcamp"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
