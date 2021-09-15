@@ -1,7 +1,5 @@
-//import { tokens, ether, ETHER_ADDRESS, EVM_REVERT, wait } from './helpers'
-import { wait } from './helpers'
-const ETHER_ADDRESS = '0x0000000000000000000000000000000000000000';
-const EVM_REVERT = 'VM Exception while processing transaction: revert';
+import { ETHER_ADDRESS, EVM_REVERT, wait } from './helpers'
+
 const Token = artifacts.require('./Token')
 const DecentralizedBank = artifacts.require('./dBank')
 
