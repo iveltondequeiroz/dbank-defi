@@ -47,8 +47,8 @@ contract dBank {
   }
 
   function borrow() payable public {
-    //check if collateral is >= than 0.01 ETH
-    //check if user doesn't have active loan
+    // check if collateral is >= than 0.01 ETH
+    // check if user doesn't have active loan
 
     //add msg.value to ether collateral
 

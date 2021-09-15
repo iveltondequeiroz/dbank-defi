@@ -118,7 +118,7 @@ contract('dBank', ([deployer, user]) => {
     describe('failure', () => {
       it('withdrawing should be rejected', async () =>{
         await dbank.deposit({value: 10**16, from: user}) //0.01 ETH
-        await wait(2) //accruing interest
+        await wait(2) 
         await dbank.withdraw({from: deployer}).should.be.rejectedWith(EVM_REVERT) //wrong user
       })
     })
